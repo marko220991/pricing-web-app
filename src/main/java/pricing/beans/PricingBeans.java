@@ -54,10 +54,12 @@ public class PricingBeans implements Serializable{
         this.newPrice = newPrice;
     }
     
+    // method to lookup the change of the price
     public void lookupPriceChange() {
        todaysPriceChange = new Random().nextInt(1,11);
     }
     
+    // apply new price for the item
     public void applyPriceChange() {
         oldPrice = 10d;
         newPrice = 20d;
