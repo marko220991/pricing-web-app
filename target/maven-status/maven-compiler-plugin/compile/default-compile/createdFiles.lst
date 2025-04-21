@@ -2,3 +2,4 @@ pricing\beans\PricingBeans.class
 pricing\business\PricingEnterpriseBean.class
 pricing\JakartaRestConfiguration.class
 pricing\resources\JakartaEE10Resource.class
+pricing\entity\Price.class
