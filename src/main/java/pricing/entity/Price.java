@@ -8,7 +8,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import java.io.Serializable;
+import java.util.Calendar;
 
 /**
  *
@@ -19,9 +22,46 @@ public class Price implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String itemCode;
+    private Double price;
+    @Temporal(TemporalType.DATE)
+    private Calendar date;
+    
+    public Price() {
+    }
 
+    public Price(String itemCode, Double price, Calendar date) {
+        this.itemCode = itemCode;
+        this.price = price;
+        this.date = date;
+    }
+    
+    public String getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Calendar getDate() {
+        return date;
+    }
+
+    public void setDate(Calendar date) {
+        this.date = date;
+    }
+    
     public Long getId() {
         return id;
     }
